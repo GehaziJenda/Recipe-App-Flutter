@@ -4,7 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:recipe_app_flutter/common/text_widget.dart';
 import 'package:recipe_app_flutter/constants/app_colors.dart';
 import 'package:recipe_app_flutter/constants/app_sizes.dart';
+import 'package:recipe_app_flutter/food/screens/category_details_screen.dart';
 import 'package:recipe_app_flutter/home/models/categories_model.dart';
+import 'package:recipe_app_flutter/utilities/navigation.dart';
 
 class CategoryWidget extends StatelessWidget {
   final Category category;
@@ -27,7 +29,12 @@ class CategoryWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigation.navigateTo(
+                    context,
+                    CategoryDetailsScreen(category: category),
+                  );
+                },
                 icon: const Icon(
                   FontAwesomeIcons.circleInfo,
                   color: AppColors.primaryColor,
@@ -36,9 +43,12 @@ class CategoryWidget extends StatelessWidget {
             ],
           ),
           gapH16,
-          ExtendedImage.network(
-            category.strCategoryThumb,
-            height: 80,
+          Hero(
+            tag: category.idCategory,
+            child: ExtendedImage.network(
+              category.strCategoryThumb,
+              height: 80,
+            ),
           ),
           gapH16,
           TextWidget(text: category.strCategory)
