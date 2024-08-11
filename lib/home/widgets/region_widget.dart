@@ -4,14 +4,24 @@ import 'package:recipe_app_flutter/common/text_widget.dart';
 import 'package:recipe_app_flutter/constants/app_colors.dart';
 import 'package:recipe_app_flutter/constants/app_sizes.dart';
 import 'package:recipe_app_flutter/home/models/regions_model.dart';
+import 'package:recipe_app_flutter/meals/screens/meals_screen.dart';
+import 'package:recipe_app_flutter/utilities/navigation.dart';
 
 class RegionWidget extends StatelessWidget {
-  final Meal meal;
-  const RegionWidget({super.key, required this.meal});
+  final Region region;
+  const RegionWidget({super.key, required this.region});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigation.navigateTo(
+          context,
+          MealsScreen(
+            region: region,
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(bottom: Sizes.p24),
         padding: const EdgeInsets.symmetric(
@@ -28,7 +38,7 @@ class RegionWidget extends StatelessWidget {
               size: 20,
             ),
             gapW16,
-            TextWidget(text: meal.strArea)
+            TextWidget(text: region.strArea)
           ],
         ),
       ),

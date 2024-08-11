@@ -9,6 +9,7 @@ class TextWidget extends StatelessWidget {
   final TextAlign? align;
   final TextOverflow? overflow;
   final TextDecoration? decoration;
+  final int? maxLines;
 
   const TextWidget(
       {super.key,
@@ -19,14 +20,14 @@ class TextWidget extends StatelessWidget {
       this.decoration,
       this.color,
       this.align,
-      this.overflow});
+      this.overflow, this.maxLines});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      maxLines: 20,
       textAlign: align,
+      maxLines: maxLines,
       softWrap: true,
       style: TextStyle(
         fontSize: size ?? 16,

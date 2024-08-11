@@ -48,10 +48,10 @@ class _RegionsTabState extends State<RegionsTab>
             padding: const EdgeInsets.symmetric(vertical: Sizes.p20),
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: Sizes.p20),
-              itemCount: regions.meals.length,
+              itemCount: regions.regions.length,
               itemBuilder: (context, index) {
                 return RegionWidget(
-                  meal: regions.meals[index],
+                  region: regions.regions[index],
                 );
               },
             ),
