@@ -18,6 +18,7 @@ import 'package:recipe_app_flutter/meals/models/meals.dart';
 import 'package:http/http.dart' as http;
 import 'package:recipe_app_flutter/meals/screens/ingredients_tab.dart';
 import 'package:recipe_app_flutter/meals/screens/instructions_tab.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MealItemScreen extends StatefulWidget {
   final Meal meal;
@@ -56,6 +57,12 @@ class _MealItemScreenState extends State<MealItemScreen>
     //variable for meal
     final meal = widget.meal;
 
+    //variable for youtube link
+    String? youtubeLink;
+
+    //variable for youtube controller
+    YoutubePlayerController? youtubeController;
+
     return Scaffold(
       body: Column(
         children: [
@@ -66,10 +73,56 @@ class _MealItemScreenState extends State<MealItemScreen>
                 child: ExtendedImage.network(
                   meal.strMealThumb,
                   width: size.width,
+                  height: size.height * 0.3,
                   fit: BoxFit.cover,
                 ),
               ),
-              const IconButtonBack()
+              const IconButtonBack(),
+              Positioned(
+                bottom: 0,
+                right: Sizes.p20,
+                child: IconButton(
+                  onPressed: () {
+                    //check if youtube link is loaded
+                    if (youtubeLink != null && youtubeController != null) {
+                      //show video in dialog if loaded
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              insetPadding: EdgeInsets.zero,
+                              child: YoutubePlayer(
+                                progressColors: const ProgressBarColors(
+                                    playedColor: AppColors.primaryColor,
+                                    bufferedColor: AppColors.textGrey,
+                                    handleColor: AppColors.primaryColor),
+                                controller: youtubeController!,
+                                thumbnail: ExtendedImage.network(
+                                  meal.strMealThumb,
+                                  fit: BoxFit.cover,
+                                ),
+                                progressIndicatorColor: AppColors.primaryColor,
+                              ),
+                            );
+                          });
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: TextWidget(
+                            text: Strings.youtubeVideoNotAvailable,
+                            color: Colors.white,
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                  icon: const Icon(
+                    FontAwesomeIcons.youtube,
+                    color: AppColors.youtubeRed,
+                    size: 50,
+                  ),
+                ),
+              )
             ],
           ),
           Container(
@@ -80,13 +133,13 @@ class _MealItemScreenState extends State<MealItemScreen>
             ),
             color: AppColors.grey,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextWidget(
                   text: meal.strMeal,
                   size: 22,
                   maxLines: 2,
                 ),
-                gapH16,
               ],
             ),
           ),
@@ -104,6 +157,22 @@ class _MealItemScreenState extends State<MealItemScreen>
                   log(snapshot.data?.body ?? "");
                   //convert data to meal details
                   final mealDetails = mealDetailsFromJson(snapshot.data!.body);
+                  //set youtube link
+                  youtubeLink = mealDetails.meals[0]["strYoutube"];
+                  //get video id
+                  String? videoId =
+                      YoutubePlayer.convertUrlToId(youtubeLink ?? "");
+                  if (videoId != null) {
+                    //set controller
+                    youtubeController = YoutubePlayerController(
+                      initialVideoId: videoId,
+                      flags: const YoutubePlayerFlags(
+                        autoPlay: true,
+                        mute: false,
+                      ),
+                    );
+                  }
+
                   return Expanded(
                     child: Column(
                       children: [
@@ -159,7 +228,9 @@ class _MealItemScreenState extends State<MealItemScreen>
                                   instructions: mealDetails.meals[0]
                                           ["strInstructions"] ??
                                       Strings.noInstructionsAvailable),
-                              const IngredientsTab(),
+                              IngredientsTab(
+                                meal: mealDetails.meals[0],
+                              ),
                             ],
                           ),
                         ),

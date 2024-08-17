@@ -1,6 +1,8 @@
 class Strings {
   //base url
   static const String baseUrl = "https://www.themealdb.com/api/json/v1/1";
+  //images base url
+  static const String imageUrl = "https://www.themealdb.com/images/ingredients/";
 
   //dialogs strings
   static const String ok = "OK";
@@ -21,4 +23,5 @@ class Strings {
   static const String instructions = "Instructions";
   static const String ingredients = "Ingredients";
   static const String noInstructionsAvailable = "No Instructions Available";
+  static const String youtubeVideoNotAvailable = "YouTube Video Not Available";
 }
