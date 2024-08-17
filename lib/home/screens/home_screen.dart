@@ -22,8 +22,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void initState() {
     //init tab controller
     _tabController = TabController(length: 2, vsync: this);
-    //wait for widget tree to build
-    WidgetsBinding.instance.addPostFrameCallback((_) {});
     super.initState();
   }
 

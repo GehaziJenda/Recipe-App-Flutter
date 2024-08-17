@@ -16,4 +16,9 @@ class Strings {
   static const String welcome = "Welcome";
   static const String categories = "Categories";
   static const String regions = "Regions";
+
+  //meal item screen strings
+  static const String instructions = "Instructions";
+  static const String ingredients = "Ingredients";
+  static const String noInstructionsAvailable = "No Instructions Available";
 }

@@ -1,6 +1,6 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:recipe_app_flutter/common/icon_button_back.dart';
 import 'package:recipe_app_flutter/common/text_widget.dart';
 import 'package:recipe_app_flutter/constants/app_colors.dart';
 import 'package:recipe_app_flutter/constants/app_sizes.dart';
@@ -43,20 +43,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: Sizes.p48, left: Sizes.p20),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Container(
-                    padding: const EdgeInsets.all(Sizes.p12),
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: AppColors.grey),
-                    child: const Icon(FontAwesomeIcons.arrowLeft),
-                  ),
-                ),
-              )
+              const IconButtonBack()
             ],
           ),
           Expanded(

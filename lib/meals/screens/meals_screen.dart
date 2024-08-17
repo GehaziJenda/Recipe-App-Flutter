@@ -11,7 +11,7 @@ import 'package:recipe_app_flutter/constants/endpoints.dart';
 import 'package:recipe_app_flutter/constants/fonts.dart';
 import 'package:recipe_app_flutter/constants/strings.dart';
 import 'package:recipe_app_flutter/home/models/regions_model.dart';
-import 'package:recipe_app_flutter/meals/models/category_meals.dart';
+import 'package:recipe_app_flutter/meals/models/meals.dart';
 import 'package:recipe_app_flutter/home/models/categories_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:recipe_app_flutter/meals/widgets/meal_widget.dart';
@@ -90,7 +90,9 @@ class _MealsScreenState extends State<MealsScreen> {
                   crossAxisCount: 2,
                 ),
                 itemBuilder: (context, index) {
-                  return MealWidget(meal: meals.meals[index]);
+                  return MealWidget(
+                    meal: meals.meals[index],
+                  );
                 },
               ),
             );

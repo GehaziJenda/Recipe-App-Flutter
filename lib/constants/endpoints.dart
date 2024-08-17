@@ -8,4 +8,6 @@ class Endpoints{
   static const String categoryMeals = "/filter.php?c=";
   //to get meals for region, needs region to be added at the end
   static const String regionMeals = "/filter.php?a=";
+  //to get meal item details, needs meal id to be added at the end
+  static const String mealItemDetails = "/lookup.php?i=";
 }
