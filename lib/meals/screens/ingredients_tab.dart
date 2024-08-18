@@ -14,7 +14,7 @@ class IngredientsTab extends StatefulWidget {
 }
 
 class _IngredientsTabState extends State<IngredientsTab> {
-  final ingredientsList = <Map<String, String>>[];
+  final _ingredientsList = <Map<String, String>>[];
 
   //function to get ingredients and corresponding measurements
   void listIngredientsAndMeasurements(Map<String, dynamic> mealData) {
@@ -29,7 +29,7 @@ class _IngredientsTabState extends State<IngredientsTab> {
           ingredient.isNotEmpty &&
           measurement != null &&
           measurement.isNotEmpty) {
-        ingredientsList
+        _ingredientsList
             .add({"ingredient": ingredient, "measurement": measurement});
       }
     }
@@ -52,12 +52,12 @@ class _IngredientsTabState extends State<IngredientsTab> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: ingredientsList.length,
+        itemCount: _ingredientsList.length,
         padding: const EdgeInsets.only(
             left: Sizes.p20, right: Sizes.p20, top: Sizes.p20),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          final ingredient = ingredientsList[index];
+          final ingredient = _ingredientsList[index];
           return Padding(
             padding: const EdgeInsets.only(bottom: Sizes.p16),
             child: Column(

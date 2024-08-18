@@ -10,4 +10,6 @@ class Endpoints{
   static const String regionMeals = "/filter.php?a=";
   //to get meal item details, needs meal id to be added at the end
   static const String mealItemDetails = "/lookup.php?i=";
+  //to search for a meal, add search query at the end
+  static const String search = "/search.php?s=";
 }

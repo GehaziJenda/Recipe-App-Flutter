@@ -77,7 +77,7 @@ class _MealsScreenState extends State<MealsScreen> {
             log(snapshot.data?.body ?? "");
             //create category meals object
             final meals = mealsFromJson(snapshot.data!.body);
-            //display list of categories
+            //display list of meals
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: Sizes.p20),
               child: GridView.builder(

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:recipe_app_flutter/common/dialogs.dart';
 import 'package:recipe_app_flutter/common/future_builder_error.dart';

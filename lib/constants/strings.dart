@@ -16,8 +16,11 @@ class Strings {
 
   //categories screen strings
   static const String welcome = "Welcome";
+  static const String recipesApp = "Recipes App";
+  static const String search = "Search";
   static const String categories = "Categories";
   static const String regions = "Regions";
+  static const String noSearchResultsFound = "No Search Results Found";
 
   //meal item screen strings
   static const String instructions = "Instructions";
