@@ -11,12 +11,13 @@ This Flutter Recipes App is an open-source project that allows users to search a
 
 ## Screenshots
 
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 06 11](https://github.com/user-attachments/assets/bf57bf3a-5805-44a9-aaea-a6b6b3215e9d)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 06 18](https://github.com/user-attachments/assets/f1271f57-c7b3-4934-8230-ddf9ce406ac6)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 06 36](https://github.com/user-attachments/assets/b6076978-2789-4f63-9195-68778b2ad7b2)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 06 50](https://github.com/user-attachments/assets/d87a077e-3044-4efb-a98a-1e98b68fdb8f)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 06 57](https://github.com/user-attachments/assets/269b29c0-8e4a-4aa3-b06b-08e3b6e877b1)
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-19 at 19 07 23](https://github.com/user-attachments/assets/0a757c87-318f-442d-8821-c640996009c3)
+![1](https://github.com/user-attachments/assets/6ad1bcc0-09ee-489c-b77f-46256cd4a236)
+![2](https://github.com/user-attachments/assets/5dfad4dc-ee1f-4059-b378-f7bfa00d0b88)
+![3](https://github.com/user-attachments/assets/86563a8c-1475-49bd-95a4-350987d62a15)
+![4](https://github.com/user-attachments/assets/1cbd05b6-87cf-429f-95e0-04440576c850)
+![5](https://github.com/user-attachments/assets/a54f9809-708d-4cb2-bc51-c02514853e7a)
+![6](https://github.com/user-attachments/assets/81232737-04e6-4252-b82a-d211b5792f7b)
+
 
 
 ## Getting Started
