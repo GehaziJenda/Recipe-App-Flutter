@@ -104,8 +104,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           return AppBar(
             backgroundColor: AppColors.grey,
             centerTitle: false,
-            title: TextWidget(
-              text: Strings.recipesApp.toUpperCase(),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextWidget(
+                  text: Strings.recipesApp.toUpperCase(),
+                ),
+                const TextWidget(
+                  text: Strings.byGehaziJenda,
+                  size: 12,
+                  color: AppColors.textGrey,
+                )
+              ],
             ),
             actions: const [
               AppBarSearchButton(
