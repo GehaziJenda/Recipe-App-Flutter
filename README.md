@@ -13,9 +13,10 @@ This Flutter Recipes App is an open-source project that allows users to search a
 
 ![1](https://github.com/user-attachments/assets/86a8b68e-e1a4-4c7c-bcaa-12ba8c1ac6dc)
 ![2](https://github.com/user-attachments/assets/31c4e676-e032-4f9f-84e7-8106a902008d)
-
-
-
+![3](https://github.com/user-attachments/assets/7b934b94-f9ab-47a7-9952-23f02ff05f3e)
+![4](https://github.com/user-attachments/assets/da285454-fe92-4c61-aefb-57d49398ecf4)
+![5](https://github.com/user-attachments/assets/833fbd33-6020-4ef5-b39a-75a47e5b4d4b)
+![6](https://github.com/user-attachments/assets/dcbe6a7a-57f1-4dc3-9051-4ab66cd60ef7)
 
 
 ## Getting Started
