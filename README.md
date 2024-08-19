@@ -37,7 +37,7 @@ To run this project locally, follow these steps:
    flutter run
 
 ## Licenses
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the ./LICENSE file for details.
 
 ## Acknowledgements
 - Thanks to TheMealDB for providing the API.
