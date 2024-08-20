@@ -86,7 +86,7 @@ class _MealsScreenState extends State<MealsScreen> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisSpacing: 50,
                   mainAxisSpacing: 50,
-                  childAspectRatio: 0.75,
+                  childAspectRatio: 0.7,
                   crossAxisCount: 2,
                 ),
                 itemBuilder: (context, index) {

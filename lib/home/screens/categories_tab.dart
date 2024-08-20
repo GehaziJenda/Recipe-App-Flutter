@@ -20,7 +20,6 @@ class CategoriesTab extends StatefulWidget {
 
 class _CategoriesTabState extends State<CategoriesTab>
     with AutomaticKeepAliveClientMixin {
-      
   //get categories
   Future<http.Response> getCategories() async {
     final response = await http.get(
@@ -52,7 +51,7 @@ class _CategoriesTabState extends State<CategoriesTab>
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 50,
                 mainAxisSpacing: 50,
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.75,
                 crossAxisCount: 2,
               ),
               itemBuilder: (context, index) {
